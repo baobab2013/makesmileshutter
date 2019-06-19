@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="?android:attr/listPreferredItemHeight"
+    android:background="?android:attr/activatedBackgroundIndicator"
+    android:paddingTop="6dip"
+    android:paddingBottom="6dip"
+    android:paddingRight="6dip"
+    android:paddingLeft="2dip">
+    <ImageView
+        android:id="@+id/ic_device_status"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginRight="8dp"
+        android:layout_gravity="center_vertical"
+        android:tint="@color/colorAvailable"
+        android:src="@drawable/ic_check" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        <TextView
+            android:id="@+id/device_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="16dp"
+            android:layout_gravity="left|center_vertical"
+            android:textColor="@color/colorBlack"/>
+        <TextView
+            android:id="@+id/device_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:textSize="10dp"
+            android:layout_gravity="right|center_vertical"
+            android:singleLine="true"
+            android:ellipsize="marquee"
+            android:textColor="@color/colorGray"
+            android:visibility="gone"/>
+    </LinearLayout>
+</LinearLayout>

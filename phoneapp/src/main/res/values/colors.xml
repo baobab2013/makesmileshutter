@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#efea07</color>
+    <color name="colorPrimaryDark">#99000000</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="textColorPrimary">#000000</color>
+
+    <color name="status_bar_color">#7a000000</color>
+    <color name="status_bar_color_yellow">#efea07</color>
+    <color name="tool_bar_color">#ffffff</color>
+    <color name="tool_bar_color_yellow">#efea07</color>
+    <color name="layout_border_color">#FF111111</color>
+</resources>

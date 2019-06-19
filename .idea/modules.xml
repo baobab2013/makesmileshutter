@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/makesmileshutter.iml" filepath="$PROJECT_DIR$/makesmileshutter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/peerdevicelist/peerdevicelist.iml" filepath="$PROJECT_DIR$/peerdevicelist/peerdevicelist.iml" />
+      <module fileurl="file://$PROJECT_DIR$/phoneapp/phoneapp.iml" filepath="$PROJECT_DIR$/phoneapp/phoneapp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/thetaplugin/thetaplugin.iml" filepath="$PROJECT_DIR$/thetaplugin/thetaplugin.iml" />
+    </modules>
+  </component>
+</project>

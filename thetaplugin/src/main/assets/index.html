@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, user scalable=no" />
+<meta charset="utf-8">
+<title>Make Smile Shutter</title>
+<script src='//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js'></script>
+<script>
+$(function(){
+$("#startscan").click(function(){
+$.get("/startscan");
+});
+$("#disconnect").click(function(){
+$.get("/disconnect");
+});
+for (var i = 1; i < 31; i++) {
+with ({i:i}) {
+$("#device"+i).click(function(){
+$.get("/device"+i);
+});
+}
+}
+setTimeout("location.reload()", 3000);
+});
+</script>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    color: #211103;
+    line-height: 1.5;
+    background-color: #fff;
+    padding: 1rem;
+}
+h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+h2 {
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+}
+section {
+    margin-bottom: 2rem;
+}
+.list {
+    display: flex;
+    align-items: center;
+}
+.list p {
+    word-break: break-all;
+    flex-basis: calc(100% - 40px);
+}
+.list-multi {
+    justify-content: space-between;
+    border-bottom: solid 1px rgba(112, 112, 112, .24);
+    padding: 0.5rem 0;
+}
+.list-multi:active {
+    background-color: rgba(33, 17, 3, .24);
+}
+.list-multi p {
+    flex-basis: calc(100% - 40px);
+}
+.icon {
+    margin-right: 0.5rem;
+    flex-basis: 40px;
+}
+.pure-material-button-contained {
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 4px;
+    padding: 0 16px 0 40px;
+    min-width: 64px;
+    height: 36px;
+    vertical-align: middle;
+    text-align: center;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    color: rgb(var(--pure-material-onprimary-rgb, 33, 17, 3));
+    background-color: rgb(var(--pure-material-primary-rgb, 239, 234, 7));
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    font-family: var(--pure-material-font, "Roboto", "Segoe UI", BlinkMacSystemFont, system-ui, -apple-system);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 36px;
+    overflow: hidden;
+    outline: none;
+    cursor: pointer;
+    transition: box-shadow 0.2s;
+}
+ .pure-material-button-contained::-moz-focus-inner {
+ border: none;
+}
+/* Overlay */
+.pure-material-button-contained::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(var(--pure-material-onprimary-rgb, 255, 255, 255));
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+/* Ripple */
+.pure-material-button-contained::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    border-radius: 50%;
+    padding: 50%;
+    width: 32px; /* Safari */
+    height: 32px; /* Safari */
+    background-color: rgb(var(--pure-material-onprimary-rgb, 255, 255, 255));
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1);
+    transition: opacity 1s, transform 0.5s;
+}
+/* Hover, Focus */
+.pure-material-button-contained:hover, .pure-material-button-contained:focus {
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+}
+.pure-material-button-contained:hover::before {
+    opacity: 0.08;
+}
+.pure-material-button-contained:focus::before {
+    opacity: 0.24;
+}
+.pure-material-button-contained:hover:focus::before {
+    opacity: 0.3;
+}
+/* Active */
+.pure-material-button-contained:active {
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+.pure-material-button-contained:active::after {
+    opacity: 0.32;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0s;
+}
+/* Disabled */
+.pure-material-button-contained:disabled {
+    color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.38);
+    background-color: rgba(var(--pure-material-onsurface-rgb, 0, 0, 0), 0.12);
+    box-shadow: none;
+    cursor: initial;
+}
+.pure-material-button-contained:disabled::before {
+    opacity: 0;
+}
+.pure-material-button-contained:disabled::after {
+    opacity: 0;
+}
+.icn_theta {
+        background-image: url('data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20height%3D%2224%22%20width%3D%2224%22%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill%3A%23211103%3B%7D.cls-2%7Bfill%3Anone%3B%7D%3C%2Fstyle%3E%3C%2Fdefs%3E%3Ctitle%3Eic_theta%3C%2Ftitle%3E%3Cg%20id%3D%22layer%22%20data-name%3D%22layer%22%3E%3Cpath%20class%3D%22cls-1%22%20d%3D%22M12%2C3.92c-.12%2C0-.22%2C0-.33%2C0a1%2C1%2C0%2C1%2C1-1.5%2C1.12%2C2.05%2C2.05%2C0%2C0%2C0-.2.86%2C2%2C2%2C0%2C0%2C0%2C2%2C2%2C2%2C2%2C0%2C0%2C0%2C2-2A2%2C2%2C0%2C0%2C0%2C12%2C3.92Z%22%2F%3E%3Cpath%20class%3D%22cls-1%22%20d%3D%22M15.45%2C1.5A11.86%2C11.86%2C0%2C0%2C0%2C12%2C1a10.88%2C10.88%2C0%2C0%2C0-3.4.5C7.94%2C1.78%2C7%2C2.24%2C7%2C3.08V21.77C7%2C22.61%2C7.65%2C23%2C8.56%2C23h6.89A1.4%2C1.4%2C0%2C0%2C0%2C17%2C21.77V3.08C17%2C2.3%2C16.29%2C1.78%2C15.45%2C1.5ZM12%2C15.35a2%2C2%2C0%2C1%2C1%2C2-2A2%2C2%2C0%2C0%2C1%2C12%2C15.35Zm0-6.43a3%2C3%2C0%2C0%2C1-3-3%2C3%2C3%2C0%2C0%2C1%2C3-3%2C3%2C3%2C0%2C0%2C1%2C3%2C3A3%2C3%2C0%2C0%2C1%2C12%2C8.92Z%22%2F%3E%3Crect%20class%3D%22cls-2%22%20width%3D%2224%22%20height%3D%2224%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E');
+        background-repeat: no-repeat;
+    flex-basis: 40px;
+    width: 40px;
+    height: 24px;
+}
+.icn_connect {
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20x%3D%220%22%20y%3D%220%22%20width%3D%2224%22%20height%3D%2224%22%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill%3Anone%3B%7D.cls-2%7Bfill%3A%23211103%3B%7D%3C%2Fstyle%3E%3C%2Fdefs%3E%3Ctitle%3Eic_connect%3C%2Ftitle%3E%3Cg%20id%3D%22layer%22%20data-name%3D%22layer%22%3E%3Crect%20class%3D%22cls-1%22%20width%3D%2224%22%20height%3D%2224%22%2F%3E%3Crect%20class%3D%22cls-1%22%20width%3D%2224%22%20height%3D%2224%22%2F%3E%3Cpath%20id%3D%22ic_link_24px%22%20data-name%3D%22ic%20link%2024px%22%20class%3D%22cls-2%22%20d%3D%22M3.9%2C12A3.1%2C3.1%2C0%2C0%2C1%2C7%2C8.9h4V7H7A5%2C5%2C0%2C0%2C0%2C7%2C17h4V15.1H7A3.1%2C3.1%2C0%2C0%2C1%2C3.9%2C12ZM8%2C13h8V11H8Zm9-6H13V8.9h4a3.1%2C3.1%2C0%2C1%2C1%2C0%2C6.2H13V17h4A5%2C5%2C0%2C0%2C0%2C17%2C7Z%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    flex-basis: 60px;
+    width: 60px;
+    height: 24px;
+    background-position: right;
+}
+.icn_scan {
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20x%3D%220%22%20y%3D%220%22%20width%3D%2224%22%20height%3D%2224%22%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill%3A%23211103%3B%7D.cls-2%7Bfill%3Anone%3B%7D%3C%2Fstyle%3E%3C%2Fdefs%3E%3Ctitle%3Eic_scan%3C%2Ftitle%3E%3Cg%20id%3D%22layer%22%20data-name%3D%22layer%22%3E%3Cpath%20id%3D%22ic_search_24px%22%20data-name%3D%22ic%20search%2024px%22%20class%3D%22cls-1%22%20d%3D%22M15.77%2C14.27H15L14.7%2C14a6.51%2C6.51%2C0%2C1%2C0-.7.7l.27.28v.79l5%2C5%2C1.49-1.49Zm-6%2C0a4.5%2C4.5%2C0%2C1%2C1%2C4.5-4.5%2C4.5%2C4.5%2C0%2C0%2C1-4.5%2C4.5Z%22%2F%3E%3Crect%20class%3D%22cls-2%22%20width%3D%2224%22%20height%3D%2224%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: 8px;
+}
+.icn_disconnect {
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20fill%3D%22none%22%20d%3D%22M0%200h24v24H0V0z%22%2F%3E%3Cpath%20d%3D%22M17%207h-4v1.9h4c1.71%200%203.1%201.39%203.1%203.1%200%201.43-.98%202.63-2.31%202.98l1.46%201.46C20.88%2015.61%2022%2013.95%2022%2012c0-2.76-2.24-5-5-5zm-1%204h-2.19l2%202H16zM2%204.27l3.11%203.11C3.29%208.12%202%209.91%202%2012c0%202.76%202.24%205%205%205h4v-1.9H7c-1.71%200-3.1-1.39-3.1-3.1%200-1.59%201.21-2.9%202.76-3.07L8.73%2011H8v2h2.73L13%2015.27V17h1.73l4.01%204L20%2019.74%203.27%203%202%204.27z%22%2F%3E%3Cpath%20fill%3D%22none%22%20d%3D%22M0%2024V0%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: 8px;
+}
+</style>
+</head>
+<body>
+<section>
+<h1>Make Smile Shutter</h1>
+  <input type="button" value="Start Scan" id="startscan" class="pure-material-button-contained icn_scan">
+  <input type="button" value="Disconnect" id="disconnect" class="pure-material-button-contained icn_disconnect">
+</section>
+<section>
+  <h2>Me</h2>
+  <div class="list">
+  <span class="icn_theta"></span>
+  <p>M12345678MM12345678MM12345678MM12345678MM12345678MM12345678MM12345678MM12345678MM12345678MM12345678MM12345678MM12345678M</p></div>
+</section>
+<section>
+  <h2>Peers</h2>
+  <div class="list list-multi" id="device1">
+    <p>Device1Device1Device1Device1Device1Device1Device1Device1</p>
+    <span class="icn_connect"></span>
+  </div>
+  <div class="list list-multi">
+    <p>Device1</p><span class="icn_connect"></span>
+  </div>
+</section>
+</body>
+</html>

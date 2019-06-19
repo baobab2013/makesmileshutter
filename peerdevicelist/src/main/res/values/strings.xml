@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">PeerDeviceList</string>
+    <string name="label_me">ME</string>
+    <string name="label_peers">PEERS</string>
+    <string name="empty_message">No devices found.</string>
+    <string name="start_scan">Start Scan</string>
+    <string name="connect">Connect</string>
+    <string name="discover_peers_button">Discover</string>
+    <string name="get_started">Get Started</string>
+    <string name="tutorial">Tutorial</string>
+</resources>
