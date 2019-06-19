@@ -15,8 +15,10 @@
  */
 package jp.co.taosoftware.makesmileshutter.phoneapp
 
+import android.Manifest
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.media.AudioAttributes
@@ -29,6 +31,7 @@ import android.net.wifi.p2p.WifiP2pConfig
 import android.net.wifi.p2p.WifiP2pDevice
 import android.net.wifi.p2p.WifiP2pInfo
 import android.os.AsyncTask
+import android.os.Build
 import android.os.Bundle
 import android.os.Environment
 import android.text.TextUtils
@@ -536,23 +539,27 @@ class AudioDeviceDetailFragment : Fragment(), ConnectManageBottomSheetDialog.Con
      */
     private fun startCameraSource() {
 
-        // check that the device has play services available.
-        val code = GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(
-                context)
-        if (code != ConnectionResult.SUCCESS) {
-            val dlg = GoogleApiAvailability.getInstance().getErrorDialog(activity, code, RC_HANDLE_GMS)
-            dlg.show()
-        }
-
-        if (cameraSource != null) {
-            try {
-                cameraSourcePreview.start(cameraSource, graphicOverlay)
-            } catch (e: IOException) {
-                Log.e(TAG, "Unable to start camera source.", e)
-                cameraSource.release()
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && context!!.checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // requesting permission.
+        }else{
+            // check that the device has play services available.
+            val code = GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(
+                    context)
+            if (code != ConnectionResult.SUCCESS) {
+                val dlg = GoogleApiAvailability.getInstance().getErrorDialog(activity, code, RC_HANDLE_GMS)
+                dlg.show()
             }
 
+            if (cameraSource != null) {
+                try {
+                    cameraSourcePreview.start(cameraSource, graphicOverlay)
+                } catch (e: IOException) {
+                    Log.e(TAG, "Unable to start camera source.", e)
+                    cameraSource.release()
+                }
+            }
         }
+
     }
     private var isReady = true
     private fun takeAPicture() {
