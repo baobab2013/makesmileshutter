@@ -150,13 +150,13 @@ Make Smile Shutter has been confirmed to operate under the following conditions.
 <a name="information"></a>
 ## Where to find the latest information
 
-* The latest information is published on [the WEB site](https://api.ricoh/docs/theta-plugin/).
-* The latest SDK is released on [the GitHub project](https://github.com/ricohapi/theta-plugin-sdk).
+* The latest information is published on [the WEB site](https://github.com/baobab2013/makesmileshutter/wiki).
+* The latest THETA PLUGIN SDK is released on [the GitHub project](https://github.com/ricohapi/theta-plugin-sdk).
 
 <a name="troubleshooting"></a>
 ## Troubleshooting
 
-If you have a request, create an issue on [the GitHub project](https://github.com/ricohapi/theta-plugin-sdk/issues).
+If you have a request, create an issue on [the GitHub project](https://github.com/baobab2013/makesmileshutter/issues).
 
 <a name="trademark"></a>
 ## Trademark Information
