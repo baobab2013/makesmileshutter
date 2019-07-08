@@ -15,6 +15,9 @@
 
     <!-- Google Play filtering -->
     <uses-feature android:name="android.hardware.wifi.direct" android:required="true"/>
+    <uses-feature android:name="com.theta360.receptor.v" android:required="true"/>
+    <uses-feature android:name="com.theta360.receptor.z1" android:required="true"/>
+
     <application
         android:icon="@mipmap/ic_launcher"
         android:roundIcon="@mipmap/ic_launcher_round"
