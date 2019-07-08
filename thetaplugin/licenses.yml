@@ -393,6 +393,7 @@
   license: The Apache Software License, Version 2.0
   licenseUrl: http://www.apache.org/licenses/LICENSE-2.0.txt
   url: https://github.com/ricohapi/theta-plugin-sdk
+  skip: true
 - artifact: androidx.constraintlayout:constraintlayout-solver:+
   name: Android ConstraintLayout Solver
   copyrightHolder: The Android Open Source Project
