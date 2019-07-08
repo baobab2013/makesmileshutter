@@ -93,7 +93,6 @@ class WiFiDirectActivity : PluginActivity(), PeerDeviceListFragment.DeviceAction
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
             behavior!!.setBottomSheetCallback(object: BottomSheetBehavior.BottomSheetCallback(){
                 override fun onSlide(p0: View, rate: Float) {
-                    Log.w("BottomSheetCallback","onSlide rate:"+rate+" translationY:"+p0.translationY)
                     val scrollrate = if(0 > rate) 0.0f else rate
                     toolbar.setBackgroundColor(Color.rgb(239+((16*(1.0-scrollrate)).toInt()),234+((21*(1.0-scrollrate)).toInt()),7+((248*(1.0-scrollrate)).toInt())))
                 }
