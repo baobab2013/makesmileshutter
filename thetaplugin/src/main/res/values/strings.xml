@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Make Smile Shutter Plug-in</string>
+    <string name="app_name">Make Smile Shutter</string>
     <string name="enable_p2p_button">P2P On/Off</string>
     <string name="discover_peers_button">Discover</string>
     <string name="connect_peer_button">Connect</string>
