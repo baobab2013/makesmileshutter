@@ -264,11 +264,6 @@ class WiFiManageRepositoryImpl(private val context: Context, private val manager
                             .also { INSTANCE = it }
                 }
 
-
-        /**
-         * Used to force [getInstance] to create a new instance
-         * next time it's called.
-         */
         @JvmStatic fun destroyInstance() {
             INSTANCE = null
         }
