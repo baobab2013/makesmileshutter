@@ -1,8 +1,8 @@
 # Make Smile Shutter
 
-[![Make Smile Shutter](art/promotion.png)](https://pluginstore.theta360.com/plugins/jp.co.taosoftware.makesmileshutter.thetaplugin/)
+[![https://github.com/baobab2013/makesmileshutter/blob/develop/art/promotion.png](http://img.youtube.com/vi/Sqv4GEOJKog/0.jpg)](http://www.youtube.com/watch?v=Sqv4GEOJKog "Make Smile Shutter Demonstration Video")
 
-Version: 1.0.0
+Version: 1.0.3
 
 ## Contents
 
