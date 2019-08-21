@@ -20,6 +20,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Color
+import android.media.AudioManager
 import android.net.wifi.WifiManager
 import android.net.wifi.p2p.WifiP2pDevice
 import android.os.Build
@@ -94,6 +95,7 @@ class WiFiDirectActivity : AppCompatActivity(), PeerDeviceListFragment.DeviceAct
 
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        volumeControlStream = AudioManager.STREAM_MUSIC
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
         setContentView(R.layout.main)
         setSupportActionBar(toolbar)

@@ -128,6 +128,11 @@ class AudioDeviceDetailFragment : Fragment(), ConnectManageBottomSheetDialog.Con
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+
+        val audioManager = activity!!.getSystemService(Context.AUDIO_SERVICE) as AudioManager // 2019/8/21追記
+        val maxVol = audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC) // 2019/8/21追記
+        audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, maxVol, AudioManager.FLAG_PLAY_SOUND) // 2019/8/21追記
+
         SHARED_FILE_URL = File(context!!.getExternalFilesDir("received"),
                 "$FileUtility.SHARED_FILENAME.wav").absolutePath
 
@@ -382,9 +387,8 @@ class AudioDeviceDetailFragment : Fragment(), ConnectManageBottomSheetDialog.Con
         if (!isExistingFile(path!!)) {
             return
         }
+
         val audioManager = activity!!.getSystemService(Context.AUDIO_SERVICE) as AudioManager
-        val maxVol = audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC) // 2019/1/21追記
-        audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, maxVol, AudioManager.FLAG_PLAY_SOUND) // 2019/1/21追記
         audioManager.isSpeakerphoneOn = true
 
         val mediaPlayer = MediaPlayer()
